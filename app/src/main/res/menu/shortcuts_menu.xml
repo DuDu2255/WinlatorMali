@@ -13,7 +13,7 @@
     <item
         android:id="@+id/shortcuts_menu_import"
         android:icon="@drawable/icon_action_bar_import"
-        android:title="Import Shortcut"
+        android:title="@string/wlm_import_shortcut"
         app:showAsAction="ifRoom" />
 
     <item

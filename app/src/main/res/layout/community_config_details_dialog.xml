@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 android:textSize="12sp"
-                android:text="👍 Helpful (0)" />
+                android:text="@string/wlm_helpful_0" />
 
             <Button
                 android:id="@+id/BTDetailDislike"
@@ -66,7 +66,7 @@
                 android:layout_height="38dp"
                 android:layout_weight="1"
                 android:textSize="12sp"
-                android:text="👎 Didn't Work (0)" />
+                android:text="@string/wlm_didn_t_work_0" />
 
         </LinearLayout>
 
@@ -80,7 +80,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notes"
+            android:text="@string/wlm_notes"
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="?android:attr/textColorSecondary"

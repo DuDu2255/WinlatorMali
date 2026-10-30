@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="Custom Vulkan drivers (Adrenotools .zip) you've installed. Pick one per container in its Graphics Driver settings."
+        android:text="@string/wlm_custom_vulkan_drivers_adrenotools_zip_you_ve_installed_pick_one_per_container_in_its_graphics_driver_settings"
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="12.5sp" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="No drivers installed yet.\nTap Install Drivers to add an Adrenotools .zip."
+            android:text="@string/wlm_no_drivers_installed_yet_ntap_install_drivers_to_add_an_adrenotools_zip"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="13sp"
             android:visibility="gone" />

@@ -68,7 +68,7 @@
                 <TextView
                     android:id="@+id/TVWheelLabel"
                     style="@style/FieldSetLabel"
-                    android:text="Radial Wheel" />
+                    android:text="@string/wlm_radial_wheel" />
             </FrameLayout>
 
             <!-- ── Wheel Properties ── -->
@@ -85,14 +85,14 @@
                         android:id="@+id/CBEnableWheel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Enable This Radial Wheel"
+                        android:text="@string/wlm_enable_this_radial_wheel"
                         android:checked="true" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Wheel Name"
+                        android:text="@string/wlm_wheel_name"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -110,7 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Hold Trigger Button 1"
+                        android:text="@string/wlm_hold_trigger_button_1"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -126,7 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Combo Trigger Button 2 (Optional)"
+                        android:text="@string/wlm_combo_trigger_button_2_optional"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Wheel Icon Scale"
+                            android:text="@string/wlm_wheel_icon_scale"
                             android:textSize="12sp"
                             android:textStyle="bold" />
                         <TextView
@@ -169,7 +169,7 @@
                 <TextView
                     android:id="@+id/TVPropertiesLabel"
                     style="@style/FieldSetLabel"
-                    android:text="Properties" />
+                    android:text="@string/wlm_properties" />
             </FrameLayout>
 
             <!-- ── Wheel Slices ── -->
@@ -185,7 +185,7 @@
                 <TextView
                     android:id="@+id/TVSlicesLabel"
                     style="@style/FieldSetLabel"
-                    android:text="Wheel Slices (Top Clockwise)" />
+                    android:text="@string/wlm_wheel_slices_top_clockwise" />
             </FrameLayout>
 
         </LinearLayout>

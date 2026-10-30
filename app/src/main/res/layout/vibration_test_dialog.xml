@@ -22,7 +22,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Controllers"
+                android:text="@string/wlm_controllers"
                 android:textStyle="bold"
                 android:textSize="14sp"
                 android:textColor="?attr/colorAccent" />
@@ -36,7 +36,7 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:text="Rescan"
+                android:text="@string/wlm_rescan"
                 android:textAllCaps="false"
                 android:textColor="#3D82FF"
                 android:textSize="13sp"
@@ -58,7 +58,7 @@
                 android:lineSpacingExtra="3dp"
                 android:textSize="13sp"
                 android:textColor="?android:attr/textColorPrimary"
-                android:text="Looking for controllers…" />
+                android:text="@string/wlm_looking_for_controllers" />
 
             <Button
                 style="@style/ButtonPositive"
@@ -92,7 +92,7 @@
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeMaxTextSize="16sp"
-                android:text="Test vibration" />
+                android:text="@string/wlm_test_vibration" />
 
             <Button
                 style="@style/ButtonNeutral"
@@ -104,14 +104,14 @@
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeMaxTextSize="16sp"
-                android:text="Stop" />
+                android:text="@string/wlm_stop" />
         </LinearLayout>
 
         <!-- Test settings -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test settings"
+            android:text="@string/wlm_test_settings"
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorAccent"
@@ -128,7 +128,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Motor"
+                android:text="@string/wlm_motor"
                 android:textSize="12.5sp"
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_marginBottom="4dp" />
@@ -150,7 +150,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Strength"
+                    android:text="@string/wlm_strength"
                     android:textSize="12.5sp"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -175,7 +175,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Duration"
+                android:text="@string/wlm_duration"
                 android:textSize="12.5sp"
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_marginTop="12dp"
@@ -193,7 +193,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vibrate on"
+            android:text="@string/wlm_vibrate_on"
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorAccent"
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:textSize="13sp"
-                android:text="USB controller (direct)" />
+                android:text="@string/wlm_usb_controller_direct" />
 
             <CheckBox
                 android:id="@+id/CBAndroidInputDevice"
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:textSize="13sp"
-                android:text="Bluetooth / other controllers" />
+                android:text="@string/wlm_bluetooth_other_controllers" />
 
             <CheckBox
                 android:id="@+id/CBPhoneFallback"
@@ -229,14 +229,14 @@
                 android:layout_height="wrap_content"
                 android:checked="false"
                 android:textSize="13sp"
-                android:text="Phone (to check the test is running)" />
+                android:text="@string/wlm_phone_to_check_the_test_is_running" />
         </LinearLayout>
 
         <!-- Log -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log"
+            android:text="@string/wlm_log"
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorAccent"
@@ -261,7 +261,7 @@
                     android:typeface="monospace"
                     android:textSize="11sp"
                     android:textColor="#E0E0E0"
-                    android:text="Ready." />
+                    android:text="@string/wlm_ready" />
             </ScrollView>
         </LinearLayout>
 

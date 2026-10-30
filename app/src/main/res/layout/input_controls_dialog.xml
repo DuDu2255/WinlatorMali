@@ -101,14 +101,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="Gyro View" />
+            android:text="@string/wlm_gyro_view" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Activation Method"
+            android:text="@string/wlm_activation_method"
             android:textSize="14sp" />
 
         <Spinner
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Simulation Target"
+            android:text="@string/wlm_simulation_target"
             android:textSize="14sp" />
 
         <Spinner
@@ -145,7 +145,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Invert Yaw (X)"
+                android:text="@string/wlm_invert_yaw_x"
                 android:textSize="12sp" />
 
             <CheckBox
@@ -154,7 +154,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Invert Pitch (Y)"
+                android:text="@string/wlm_invert_pitch_y"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Acceleration Curve"
+            android:text="@string/wlm_acceleration_curve"
             android:textSize="14sp" />
 
         <Spinner
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Sensitivity X (Yaw): 1.0x"
+            android:text="@string/wlm_sensitivity_x_yaw_1_0x"
             android:textSize="14sp" />
 
         <SeekBar
@@ -195,7 +195,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Sensitivity Y (Pitch): 1.0x"
+            android:text="@string/wlm_sensitivity_y_pitch_1_0x"
             android:textSize="14sp" />
 
         <SeekBar
@@ -211,7 +211,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Gyro Smoothing: 50%"
+            android:text="@string/wlm_gyro_smoothing_50"
             android:textSize="14sp" />
 
         <SeekBar
@@ -227,7 +227,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
-            android:text="Gyro Deadzone: 5%"
+            android:text="@string/wlm_gyro_deadzone_5"
             android:textSize="14sp" />
 
         <SeekBar
@@ -250,7 +250,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="4dp"
-                android:text="Calibrate" />
+                android:text="@string/wlm_calibrate" />
 
             <Button
                 android:id="@+id/BTGyroReset"
@@ -259,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="4dp"
-                android:text="Reset" />
+                android:text="@string/wlm_reset" />
         </LinearLayout>
 
     </LinearLayout>

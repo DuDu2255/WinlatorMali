@@ -30,7 +30,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="?android:attr/textColorPrimary"
-            android:text="Optimized for Snap8Gen3"/>
+            android:text="@string/wlm_optimized_for_snap8gen3"/>
 
         <TextView
             android:id="@+id/TVDeviceModel"

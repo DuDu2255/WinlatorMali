@@ -162,7 +162,7 @@
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeMaxTextSize="16sp"
-                android:text="Edit On-Screen Controls" />
+                android:text="@string/wlm_edit_on_screen_controls" />
 
             <Button
                 style="@style/ButtonNeutral"
@@ -174,7 +174,7 @@
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeMaxTextSize="16sp"
-                android:text="Radial Wheels" />
+                android:text="@string/wlm_radial_wheels" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="16dp"
                 android:gravity="center"
-                android:text="No controller connected.\nPlug in or pair a controller to set up its buttons."
+                android:text="@string/wlm_no_controller_connected_nplug_in_or_pair_a_controller_to_set_up_its_buttons"
                 android:textSize="13sp"
                 android:textColor="?android:attr/textColorSecondary"
                 android:visibility="gone" />

@@ -72,7 +72,7 @@
                     android:tag="section_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="General &amp; Display"
+                    android:text="@string/wlm_general_and_display"
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:textColor="?attr/colorAccent"
@@ -177,7 +177,7 @@
                     android:tag="section_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Graphics &amp; Rendering"
+                    android:text="@string/wlm_graphics_and_rendering"
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:textColor="?attr/colorAccent"
@@ -236,7 +236,7 @@
                             android:id="@+id/TVWrapperVersionLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Current Version:"
+                            android:text="@string/wlm_current_version"
                             android:textStyle="bold"
                             android:textSize="12sp"
                             android:textColor="?attr/semanticOnSurfaceVariant"
@@ -324,7 +324,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Configure BCN Texture Layer"
+                            android:text="@string/wlm_configure_bcn_texture_layer"
                             android:textSize="14sp"
                             android:textColor="?attr/semanticOnSurface" />
 
@@ -346,7 +346,7 @@
                     android:tag="section_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="System &amp; Audio"
+                    android:text="@string/wlm_system_and_audio"
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:textColor="?attr/colorAccent"
@@ -384,7 +384,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="64bit Emulator"
+                            android:text="@string/wlm_64bit_emulator"
                             android:textSize="13sp"
                             android:layout_marginBottom="4dp" />
 
@@ -762,7 +762,7 @@
                     android:tag="section_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Launch Arguments &amp; Optimizations"
+                    android:text="@string/wlm_launch_arguments_and_optimizations"
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:textColor="?attr/colorAccent"

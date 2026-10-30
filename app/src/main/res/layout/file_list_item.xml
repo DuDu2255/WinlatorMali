@@ -27,7 +27,7 @@
             android:id="@+id/TVFileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FolderName" />
+            android:text="@string/wlm_foldername" />
         <TextView
             android:textSize="12.0sp"
             android:textColor="?android:textColorSecondary"

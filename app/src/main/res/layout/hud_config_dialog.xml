@@ -21,7 +21,7 @@
                 android:id="@+id/CBHudEnable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Show HUD"
+                android:text="@string/wlm_show_hud"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp" />
 
@@ -33,54 +33,54 @@
                         android:id="@+id/CBHudFPS"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show FPS" />
+                        android:text="@string/wlm_show_fps" />
 
                     <CheckBox
                         android:id="@+id/CBHudGraph"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Frame-Time Graph" />
+                        android:text="@string/wlm_show_frame_time_graph" />
 
                     <CheckBox
                         android:id="@+id/CBHudLows"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show 1% / 0.1% Lows" />
+                        android:text="@string/wlm_show_1_0_1_lows" />
 
                     <CheckBox
                         android:id="@+id/CBHudRenderer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Renderer" />
+                        android:text="@string/wlm_show_renderer" />
 
                     <CheckBox
                         android:id="@+id/CBHudVertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Vertical Layout" />
+                        android:text="@string/wlm_vertical_layout" />
 
                     <CheckBox
                         android:id="@+id/CBHudWrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Wrapper Name" />
+                        android:text="@string/wlm_show_wrapper_name" />
 
                     <CheckBox
                         android:id="@+id/CBHudLocked"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lock HUD Position" />
+                        android:text="@string/wlm_lock_hud_position" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Disables dragging and orientation toggling via touch"
+                        android:text="@string/wlm_disables_dragging_and_orientation_toggling_via_touch"
                         android:textSize="10sp"
                         android:textColor="#888888"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="-4dp" />
                 </LinearLayout>
-                <TextView style="@style/FieldSetLabel" android:text="Performance" />
+                <TextView style="@style/FieldSetLabel" android:text="@string/wlm_performance" />
             </FrameLayout>
 
             <FrameLayout
@@ -92,39 +92,39 @@
                         android:id="@+id/CBHudGPU"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show GPU Load" />
+                        android:text="@string/wlm_show_gpu_load" />
 
                     <CheckBox
                         android:id="@+id/CBHudCPU"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show CPU Load" />
+                        android:text="@string/wlm_show_cpu_load" />
 
                     <CheckBox
                         android:id="@+id/CBHudCPUTemp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show CPU Temperature" />
+                        android:text="@string/wlm_show_cpu_temperature" />
 
                     <CheckBox
                         android:id="@+id/CBHudRAM"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show RAM Usage" />
+                        android:text="@string/wlm_show_ram_usage" />
 
                     <CheckBox
                         android:id="@+id/CBHudBattery"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Battery/Power" />
+                        android:text="@string/wlm_show_battery_power" />
 
                     <CheckBox
                         android:id="@+id/CBHudBatteryPct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Battery Percentage" />
+                        android:text="@string/wlm_show_battery_percentage" />
                 </LinearLayout>
-                <TextView style="@style/FieldSetLabel" android:text="Hardware Info" />
+                <TextView style="@style/FieldSetLabel" android:text="@string/wlm_hardware_info" />
             </FrameLayout>
 
             <FrameLayout
@@ -141,7 +141,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="HUD Look &amp; Style"
+                            android:text="@string/wlm_hud_look_and_style"
                             android:textStyle="bold"
                             android:textSize="12sp" />
                         <Spinner
@@ -158,13 +158,13 @@
                         android:id="@+id/CBHudBorder"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Show Border" />
+                        android:text="@string/wlm_show_border" />
 
                     <CheckBox
                         android:id="@+id/CBHudCompact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Compact Mode" />
+                        android:text="@string/wlm_compact_mode" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Transparency"
+                            android:text="@string/wlm_transparency"
                             android:textStyle="bold"
                             android:textSize="12sp" />
                         <TextView
@@ -203,7 +203,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Scale"
+                            android:text="@string/wlm_scale"
                             android:textStyle="bold"
                             android:textSize="12sp" />
                         <TextView
@@ -225,7 +225,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Position Preset"
+                        android:text="@string/wlm_position_preset"
                         android:layout_marginTop="8dp"
                         android:textStyle="bold"
                         android:textSize="12sp" />
@@ -237,14 +237,14 @@
                         android:spinnerMode="dropdown"
                         android:layout_marginBottom="4dp" />
                 </LinearLayout>
-                <TextView style="@style/FieldSetLabel" android:text="Appearance" />
+                <TextView style="@style/FieldSetLabel" android:text="@string/wlm_appearance" />
             </FrameLayout>
 
             <Button
                 android:id="@+id/BTHudReset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reset to Defaults"
+                android:text="@string/wlm_reset_to_defaults"
                 android:layout_marginTop="16dp"
                 style="@style/ButtonNeutral" />
         </LinearLayout>

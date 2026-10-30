@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Color Preset"
+                android:text="@string/wlm_color_preset"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:layout_marginBottom="6dp" />
@@ -54,7 +54,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:textColor="?android:attr/textColorSecondary"
-                    android:text="Strength" />
+                    android:text="@string/wlm_strength" />
 
                 <com.winlator.cmod.widget.SeekBar
                     android:id="@+id/SBPresetStrength"
@@ -80,7 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upscaler"
+                android:text="@string/wlm_upscaler"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
@@ -90,7 +90,7 @@
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Scales the container resolution to your screen. SGSR and FSR give the sharpest result."
+                android:text="@string/wlm_scales_the_container_resolution_to_your_screen_sgsr_and_fsr_give_the_sharpest_result"
                 android:layout_marginBottom="8dp" />
 
             <Spinner
@@ -115,7 +115,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:textColor="?android:attr/textColorSecondary"
-                    android:text="Upscaler Sharpness" />
+                    android:text="@string/wlm_upscaler_sharpness" />
 
                 <com.winlator.cmod.widget.SeekBar
                     android:id="@+id/SBUpscalerSharpness"
@@ -131,14 +131,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Fit game window to screen" />
+                android:text="@string/wlm_fit_game_window_to_screen" />
 
             <TextView
                 android:textSize="11sp"
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upscales a game running smaller than the container (e.g. 800x600 on 1280x720) straight to your screen with the selected upscaler, keeping its aspect ratio." />
+                android:text="@string/wlm_upscales_a_game_running_smaller_than_the_container_e_g_800x600_on_1280x720_straight_to_your_screen_with_the_selected_upscaler_keeping_its_aspect_ratio" />
         </LinearLayout>
 
         <!-- ============================================================ -->
@@ -155,7 +155,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sharpening"
+                android:text="@string/wlm_sharpening"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:layout_marginBottom="6dp" />
@@ -182,7 +182,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:textColor="?android:attr/textColorSecondary"
-                    android:text="Sharpening Level" />
+                    android:text="@string/wlm_sharpening_level" />
 
                 <com.winlator.cmod.widget.SeekBar
                     android:id="@+id/SBSharpenLevel"
@@ -219,7 +219,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Advanced (Color &amp; Effects)"
+                    android:text="@string/wlm_advanced_color_and_effects"
                     android:textStyle="bold"
                     android:textSize="13sp" />
 
@@ -289,31 +289,31 @@
                     android:id="@+id/CBEnableHDR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fake HDR (bloom + contrast)" />
+                    android:text="@string/wlm_fake_hdr_bloom_contrast" />
 
                 <CheckBox
                     android:id="@+id/CBEnableFXAA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="FXAA (anti-aliasing)" />
+                    android:text="@string/wlm_fxaa_anti_aliasing" />
 
                 <CheckBox
                     android:id="@+id/CBEnableToon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Toon Outlines" />
+                    android:text="@string/wlm_toon_outlines" />
 
                 <CheckBox
                     android:id="@+id/CBEnableCRT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CRT Scanlines" />
+                    android:text="@string/wlm_crt_scanlines" />
 
                 <CheckBox
                     android:id="@+id/CBEnableNTSC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NTSC Signal" />
+                    android:text="@string/wlm_ntsc_signal" />
             </LinearLayout>
         </LinearLayout>
 
@@ -339,7 +339,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="FPS Limiter"
+                    android:text="@string/wlm_fps_limiter"
                     android:textStyle="bold"
                     android:textSize="13sp" />
 
@@ -395,7 +395,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Frame Generation (ZeroFG)"
+                    android:text="@string/wlm_frame_generation_zerofg"
                     android:textStyle="bold"
                     android:textSize="13sp" />
 
@@ -414,7 +414,7 @@
                 android:id="@+id/CBFrameGen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enable frame generation" />
+                android:text="@string/wlm_enable_frame_generation" />
 
             <TextView
                 android:textSize="11sp"
@@ -422,7 +422,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Mode" />
+                android:text="@string/wlm_mode" />
 
             <Spinner
                 android:id="@+id/SFrameGenTarget"
@@ -438,7 +438,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Quality" />
+                android:text="@string/wlm_quality" />
 
             <Spinner
                 android:id="@+id/SFrameGenQuality"
@@ -457,7 +457,7 @@
             style="@style/ButtonNeutral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save for This Game" />
+            android:text="@string/wlm_save_for_this_game" />
 
         <Button
             android:id="@+id/BTSaveAsDefault"
@@ -465,7 +465,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Save as Container Default" />
+            android:text="@string/wlm_save_as_container_default" />
 
         <Button
             android:id="@+id/BTResetEnhancements"

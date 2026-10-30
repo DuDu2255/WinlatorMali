@@ -29,7 +29,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="?attr/colorAccent"
-                    android:text="Winlator Mali" />
+                    android:text="@string/wlm_winlator_mali" />
 
                 <TextView
                     android:id="@+id/TVWebpage"
@@ -60,7 +60,7 @@
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorAccent"
-            android:text="Branch &amp; Architecture" />
+            android:text="@string/wlm_branch_and_architecture" />
 
         <TextView
             android:id="@+id/TVBranchFeatures"
@@ -98,7 +98,7 @@
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorAccent"
-            android:text="Open Source Licenses" />
+            android:text="@string/wlm_open_source_licenses" />
 
         <TextView
             android:id="@+id/TVLicenses"

@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Settings (Drag Here to Move)"
+                android:text="@string/wlm_settings_drag_here_to_move"
                 android:textStyle="bold"
                 android:textColor="@color/colorAccent"
                 android:textSize="13sp" />
@@ -259,7 +259,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Fill Button (Icon As Button)" />
+                android:text="@string/wlm_fill_button_icon_as_button" />
 
             <LinearLayout
                 android:id="@+id/LLBoundaryAdjuster"
@@ -276,7 +276,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Boundary Width" />
+                        android:text="@string/wlm_boundary_width" />
                     <TextView
                         android:id="@+id/TVWidthScale"
                         android:layout_width="wrap_content"
@@ -300,7 +300,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Boundary Height" />
+                        android:text="@string/wlm_boundary_height" />
                     <TextView
                         android:id="@+id/TVHeightScale"
                         android:layout_width="wrap_content"
@@ -324,7 +324,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Touch Area Padding" />
+                        android:text="@string/wlm_touch_area_padding" />
                     <TextView
                         android:id="@+id/TVTouchPadding"
                         android:layout_width="wrap_content"

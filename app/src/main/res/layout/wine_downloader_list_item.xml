@@ -39,7 +39,7 @@
             android:id="@+id/TVWineItemSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Official Bannerlator Proton 10 (SDK 35)"
+            android:text="@string/wlm_official_bannerlator_proton_10_sdk_35"
             android:textSize="11.5sp"
             android:textColor="?android:attr/textColorSecondary"
             android:layout_marginTop="2dp"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:minWidth="76dp"
-        android:text="Get"
+        android:text="@string/wlm_get"
         android:textSize="12sp"
         android:layout_marginStart="8dp" />
 

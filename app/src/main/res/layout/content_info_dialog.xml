@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorSecondary"
-                android:text="Download Size" />
+                android:text="@string/wlm_download_size" />
 
             <TextView
                 android:id="@+id/TVSize"
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorSecondary"
-                android:text="Status" />
+                android:text="@string/wlm_status" />
 
             <TextView
                 android:id="@+id/TVStatus"
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorSecondary"
-                android:text="Download URL" />
+                android:text="@string/wlm_download_url" />
 
             <TextView
                 android:id="@+id/TVUrl"

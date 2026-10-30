@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="13sp"
-                android:text="Enable Pre-Configured DXVK Config" />
+                android:text="@string/wlm_enable_pre_configured_dxvk_config" />
 
             <ImageView
                 android:id="@+id/BTHelpDxvkConfig"

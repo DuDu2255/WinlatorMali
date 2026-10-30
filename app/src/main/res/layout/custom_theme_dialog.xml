@@ -38,7 +38,7 @@
                         android:id="@+id/TVPreviewToolbarTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Theme Preview"
+                        android:text="@string/wlm_theme_preview"
                         android:textColor="#ffffff"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -56,7 +56,7 @@
                         android:id="@+id/TVPreviewText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sample Title &amp; Description"
+                        android:text="@string/wlm_sample_title_and_description"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -76,7 +76,7 @@
                             android:paddingTop="4dp"
                             android:paddingRight="12dp"
                             android:paddingBottom="4dp"
-                            android:text="Accent Button"
+                            android:text="@string/wlm_accent_button"
                             android:textColor="#ffffff"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -91,7 +91,7 @@
                             android:paddingTop="2dp"
                             android:paddingRight="8dp"
                             android:paddingBottom="2dp"
-                            android:text="Contrast: 8.5:1 (Pass)"
+                            android:text="@string/wlm_contrast_8_5_1_pass"
                             android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
-            android:text="Brand &amp; Accent Color"
+            android:text="@string/wlm_brand_and_accent_color"
             android:textStyle="bold" />
 
         <!-- Quick Color Swatches Grid (Horizontal Flow) -->
@@ -244,7 +244,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
-            android:text="Background Tone"
+            android:text="@string/wlm_background_tone"
             android:textStyle="bold" />
 
         <!-- Background Swatches -->

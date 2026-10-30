@@ -49,7 +49,7 @@
                     android:id="@+id/TVDriveName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Drive D:"
+                    android:text="@string/wlm_drive_d"
                     android:layout_marginStart="6.0dip" />
                 <ImageView
                     android:layout_width="14.0dip"
@@ -179,7 +179,7 @@
         android:elevation="6dp"
         android:paddingStart="20dp"
         android:paddingEnd="22dp"
-        android:text="Use this folder"
+        android:text="@string/wlm_use_this_folder"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

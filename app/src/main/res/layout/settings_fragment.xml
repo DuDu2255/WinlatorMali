@@ -26,32 +26,32 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Appearance" />
+                android:text="@string/wlm_appearance" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Emulation" />
+                android:text="@string/wlm_emulation" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Input &amp; Display" />
+                android:text="@string/wlm_input_and_display" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Storage &amp; Audio" />
+                android:text="@string/wlm_storage_and_audio" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Performance" />
+                android:text="@string/wlm_performance" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Advanced" />
+                android:text="@string/wlm_advanced" />
         </com.google.android.material.tabs.TabLayout>
 
         <ScrollView
@@ -80,7 +80,7 @@
                         android:id="@+id/TVTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Theme &amp; Colors"
+                        android:text="@string/wlm_theme_and_colors"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="?attr/colorAccent"
@@ -103,7 +103,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Active Color Palette"
+                                android:text="@string/wlm_active_color_palette"
                                 android:textStyle="bold"
                                 android:textSize="13sp"
                                 android:textColor="?android:attr/textColorSecondary"
@@ -129,7 +129,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Custom Palette Editor"
+                                android:text="@string/wlm_custom_palette_editor"
                                 android:textSize="14sp" />
 
                             <ImageButton
@@ -399,14 +399,14 @@
                             android:id="@+id/CBCursorLock"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Capture External Pointer (Mouse Lock)"
+                            android:text="@string/wlm_capture_external_pointer_mouse_lock"
                             android:layout_marginVertical="3dp" />
 
                         <CheckBox
                             android:id="@+id/CBXinputToggle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Disable XInput (Exclusive Mouse/Keyboard Mode)"
+                            android:text="@string/wlm_disable_xinput_exclusive_mouse_keyboard_mode"
                             android:layout_marginVertical="3dp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -426,7 +426,7 @@
                         android:id="@+id/TVShortcutSettings"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Storage Paths"
+                        android:text="@string/wlm_storage_paths"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="?attr/colorAccent"
@@ -443,7 +443,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Winlator Storage Path"
+                            android:text="@string/wlm_winlator_storage_path"
                             android:textStyle="bold"
                             android:textSize="13sp"
                             android:textColor="?android:attr/textColorSecondary" />
@@ -471,13 +471,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="8dp"
-                                android:text="Browse" />
+                                android:text="@string/wlm_browse" />
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Shortcut Export Path"
+                            android:text="@string/wlm_shortcut_export_path"
                             android:textStyle="bold"
                             android:textSize="13sp"
                             android:textColor="?android:attr/textColorSecondary" />
@@ -504,7 +504,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="36dp"
                                 android:layout_marginStart="8dp"
-                                android:text="Browse" />
+                                android:text="@string/wlm_browse" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -513,7 +513,7 @@
                         android:id="@+id/TVCustomApiKey"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="SteamGridDB API Key"
+                        android:text="@string/wlm_steamgriddb_api_key"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="?attr/colorAccent"
@@ -538,7 +538,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Set SteamGrid API Key (Cover Art)" />
+                                android:text="@string/wlm_set_steamgrid_api_key_cover_art" />
 
                             <ImageView
                                 android:id="@+id/BTHelpApiKey"
@@ -627,7 +627,7 @@
                         android:id="@+id/TVPerformanceHeader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Non-Root Performance Enhancements"
+                        android:text="@string/wlm_non_root_performance_enhancements"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="?attr/colorAccent"
@@ -646,14 +646,14 @@
                             android:id="@+id/CBGameModeSignal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Trigger Android Game Mode Signal (API 33+)"
+                            android:text="@string/wlm_trigger_android_game_mode_signal_api_33"
                             android:textStyle="bold"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Informs Android and OEM Game Boosters (HyperBoost, Game Turbo, Samsung Game Booster, Pixel Game Dashboard) that an active game is running."
+                            android:text="@string/wlm_informs_android_and_oem_game_boosters_hyperboost_game_turbo_samsung_game_booster_pixel_game_dashboard_that_an_active_game_is_running"
                             android:textSize="11sp"
                             android:textColor="?android:attr/textColorSecondary"
                             android:layout_marginStart="32dp"
@@ -664,14 +664,14 @@
                             android:id="@+id/CBThreadPriorityBoost"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Guest Thread Priority Boost"
+                            android:text="@string/wlm_guest_thread_priority_boost"
                             android:textStyle="bold"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Promotes Box64/Wine CPU worker threads from default nice 0 to urgent display priorities (-8/-4/-2) without downgrading render threads."
+                            android:text="@string/wlm_promotes_box64_wine_cpu_worker_threads_from_default_nice_0_to_urgent_display_priorities_8_4_2_without_downgrading_render_threads"
                             android:textSize="11sp"
                             android:textColor="?android:attr/textColorSecondary"
                             android:layout_marginStart="32dp"
@@ -682,14 +682,14 @@
                             android:id="@+id/CBPreferBigCores"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Prefer Big CPU Cores"
+                            android:text="@string/wlm_prefer_big_cpu_cores"
                             android:textStyle="bold"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dynamically detects the device's Prime/Big CPU cluster and pins emulation threads to high-performance cores via taskset affinity."
+                            android:text="@string/wlm_dynamically_detects_the_device_s_prime_big_cpu_cluster_and_pins_emulation_threads_to_high_performance_cores_via_taskset_affinity"
                             android:textSize="11sp"
                             android:textColor="?android:attr/textColorSecondary"
                             android:layout_marginStart="32dp"
@@ -700,14 +700,14 @@
                             android:id="@+id/CBHighRefreshRate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Force High Refresh Rate"
+                            android:text="@string/wlm_force_high_refresh_rate"
                             android:textStyle="bold"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Attempts to set the display to its maximum supported refresh rate (e.g., 120Hz/144Hz) to reduce input lag."
+                            android:text="@string/wlm_attempts_to_set_the_display_to_its_maximum_supported_refresh_rate_e_g_120hz_144hz_to_reduce_input_lag"
                             android:textSize="11sp"
                             android:textColor="?android:attr/textColorSecondary"
                             android:layout_marginStart="32dp"
@@ -718,14 +718,14 @@
                             android:id="@+id/CBSustainedPerformance"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sustained Performance Mode"
+                            android:text="@string/wlm_sustained_performance_mode"
                             android:textStyle="bold"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Requests Android sustained performance mode to prevent abrupt thermal clock throttling spikes and maintain consistent frame pacing."
+                            android:text="@string/wlm_requests_android_sustained_performance_mode_to_prevent_abrupt_thermal_clock_throttling_spikes_and_maintain_consistent_frame_pacing"
                             android:textSize="11sp"
                             android:textColor="?android:attr/textColorSecondary"
                             android:layout_marginStart="32dp"
@@ -742,14 +742,14 @@
                                 android:id="@+id/CBSamsungBoost"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Samsung Galaxy Game Turbo"
+                                android:text="@string/wlm_samsung_galaxy_game_turbo"
                                 android:textStyle="bold"
                                 android:textSize="13sp" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Engages Samsung Galaxy SPerf SDK hardware clock acceleration on supported Samsung devices."
+                                android:text="@string/wlm_engages_samsung_galaxy_sperf_sdk_hardware_clock_acceleration_on_supported_samsung_devices"
                                 android:textSize="11sp"
                                 android:textColor="?android:attr/textColorSecondary"
                                 android:layout_marginStart="32dp" />
@@ -772,7 +772,7 @@
                         android:id="@+id/TVExperimental"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Catalog Settings"
+                        android:text="@string/wlm_catalog_settings"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="?attr/colorAccent"
@@ -789,7 +789,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Download Catalog Source"
+                            android:text="@string/wlm_download_catalog_source"
                             android:textStyle="bold"
                             android:textSize="13sp"
                             android:textColor="?android:attr/textColorSecondary"
@@ -805,7 +805,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Catalog JSON URL"
+                            android:text="@string/wlm_catalog_json_url"
                             android:textSize="12sp"
                             android:textColor="?android:attr/textColorSecondary" />
 
@@ -916,7 +916,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Log Manager"
+                                    android:text="@string/wlm_log_manager"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -926,7 +926,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:textSize="12sp"
-                                    android:text="What to record, where logs go, and every game's logs" />
+                                    android:text="@string/wlm_what_to_record_where_logs_go_and_every_game_s_logs" />
                             </LinearLayout>
 
                             <TextView
