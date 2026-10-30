@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fullscreen_mode_entries">
+        <item>适应（保持比例）</item>
+        <item>拉伸</item>
+        <item>填充（裁剪）</item>
+        <item>整数（像素精确）</item>
+    </string-array>
+    <string-array name="screen_alignment_entries">
+        <item>居中</item>
+        <item>上半屏</item>
+        <item>下半屏</item>
+    </string-array>
+    <string-array name="desktop_theme_entries">
+        <item>浅色</item>
+        <item>深色</item>
+    </string-array>
+    <string-array name="desktop_background_type_entries">
+        <item>图片</item>
+        <item>纯色</item>
+    </string-array>
+    <string-array name="startup_selection_entries">
+        <item>正常（加载所有服务）</item>
+        <item>精简（仅加载必要服务）</item>
+        <item>激进（启动时停止服务）</item>
+    </string-array>
+    <string-array name="ram_booster_profile_entries">
+        <item>智能自动</item>
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+        <item>激进</item>
+        <item>最高</item>
+        <item>手动</item>
+    </string-array>
+    <string-array name="touchscreenInputModesEntries">
+        <item>触控板</item>
+        <item>模拟触摸屏</item>
+        <item>直接触摸</item>
+    </string-array>
+    <string-array name="transformCapturedPointerEntries">
+        <item>否</item>
+        <item>顺时针</item>
+        <item>逆时针</item>
+        <item>旋转 180 度</item>
+        <item>自动（触控板）</item>
+    </string-array>
+    <string-array name="binding_type_entries">
+        <item>键盘</item>
+        <item>鼠标</item>
+        <item>手柄</item>
+    </string-array>
+    <string-array name="fps_limit_entries">
+        <item>无限制</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+        <item>Custom...</item>
+    </string-array>
+</resources>
