@@ -40,7 +40,7 @@ public class ContentInfoDialog extends ContentDialog {
 
         if (profile != null) {
             tvType.setText(profile.type != null ? profile.type.toString() : "Wine");
-            tvVersion.setText(profile.verName != null ? profile.verName : "Unknown");
+            tvVersion.setText(profile.verName != null ? profile.verName : "未知");
 
             if (profile.verCode > 0) {
                 llVersionCode.setVisibility(View.VISIBLE);
@@ -61,7 +61,7 @@ public class ContentInfoDialog extends ContentDialog {
 
             boolean isCloud = profile.remoteUrl != null && !profile.remoteUrl.isEmpty();
             llStatus.setVisibility(View.VISIBLE);
-            tvStatus.setText(isCloud ? "Cloud (Ready to Download)" : "Installed on Device");
+            tvStatus.setText(isCloud ? "云端（可下载）" : "已安装在设备");
             tvStatus.setTextColor(isCloud ? 0xFF00A8FF : 0xFF2ECC71);
 
             if (profile.desc != null && !profile.desc.isEmpty()) {

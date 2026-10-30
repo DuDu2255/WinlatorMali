@@ -314,7 +314,7 @@ public class SettingsFragment extends Fragment {
             .commit());
         TextView tvLogSummary = view.findViewById(R.id.TVLogManagerSummary);
         boolean recording = com.winlator.cmod.logs.LogFiles.isOn(context, "enable_wine_debug") || com.winlator.cmod.logs.LogFiles.isOn(context, "enable_box64_logs");
-        tvLogSummary.setText((!com.winlator.cmod.logs.LogFiles.isOn(context, com.winlator.cmod.logs.LogFiles.PREF_ENABLED) ? "Logs off" : recording ? "Recording game logs" : "Game logs off") + "  ·  " + com.winlator.cmod.logs.LogFiles.root(context).getAbsolutePath());
+        tvLogSummary.setText((!com.winlator.cmod.logs.LogFiles.isOn(context, com.winlator.cmod.logs.LogFiles.PREF_ENABLED) ? "日志已关闭" : recording ? "正在记录游戏日志" : "游戏日志已关闭") + "  ·  " + com.winlator.cmod.logs.LogFiles.root(context).getAbsolutePath());
 
         final TextView tvCursorSpeed = view.findViewById(R.id.TVCursorSpeed);
         final SeekBar sbCursorSpeed = view.findViewById(R.id.SBCursorSpeed);

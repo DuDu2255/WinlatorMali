@@ -173,7 +173,7 @@ public final class InGameControlsEditor implements View.OnClickListener {
     private void showGlobalOpacityDialog() {
         if (profile == null) return;
         ContentDialog dialog = new ContentDialog(activity);
-        dialog.setTitle("Global Controls Opacity");
+        dialog.setTitle("全局控制器不透明度");
         dialog.setIcon(R.drawable.icon_opacity);
 
         FrameLayout frameLayout = dialog.findViewById(R.id.FrameLayout);
@@ -187,7 +187,7 @@ public final class InGameControlsEditor implements View.OnClickListener {
 
         TextView tvValue = new TextView(activity);
         int currentPct = (int)(profile.getOverlayOpacity() * 100);
-        tvValue.setText("Opacity: " + currentPct + "%");
+        tvValue.setText("不透明度：" + currentPct + "%");
         tvValue.setTextSize(14);
         tvValue.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
         tvValue.setTextColor(activity.getResources().getColor(R.color.colorAccent));
@@ -204,7 +204,7 @@ public final class InGameControlsEditor implements View.OnClickListener {
             @Override
             public void onProgressChanged(SeekBar sb, int progress, boolean fromUser) {
                 int val = Math.max(10, progress);
-                tvValue.setText("Opacity: " + val + "%");
+                tvValue.setText("不透明度：" + val + "%");
                 float opacity = val / 100.0f;
                 profile.setOverlayOpacity(opacity);
                 inputControlsView.setOverlayOpacity(opacity);

@@ -264,9 +264,9 @@ public class ShortcutsFragment extends Fragment {
                 android.graphics.Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), selectedImage);
                 currentShortcut.saveCustomCoverArt(bitmap);
                 loadShortcutsList();
-                Toast.makeText(getContext(), "Cover art updated.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "封面已更新。", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(getContext(), "Failed to update cover art.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "更新封面失败。", Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == REQUEST_CODE_CUSTOM_HERO_ART && resultCode == Activity.RESULT_OK && data != null && currentShortcut != null) {
             Uri selectedImage = data.getData();
@@ -274,9 +274,9 @@ public class ShortcutsFragment extends Fragment {
                 android.graphics.Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), selectedImage);
                 currentShortcut.saveCustomHeroArt(bitmap);
                 loadShortcutsList();
-                Toast.makeText(getContext(), "Loading screen art updated.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "加载画面已更新。", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(getContext(), "Failed to update loading screen art.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "更新加载画面失败。", Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == REQUEST_CODE_IMPORT_SHORTCUT && resultCode == Activity.RESULT_OK && data != null) {
             Uri uri = data.getData();
@@ -325,7 +325,7 @@ public class ShortcutsFragment extends Fragment {
         try {
             startActivityForResult(Intent.createChooser(intent, "Select .desktop shortcut file"), REQUEST_CODE_IMPORT_SHORTCUT);
         } catch (Exception e) {
-            Toast.makeText(getContext(), "No file browser found.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "未找到文件浏览器。", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -362,7 +362,7 @@ public class ShortcutsFragment extends Fragment {
 
             copyDesktopFileToContainer(tempFile, containers);
         } catch (Exception e) {
-            Toast.makeText(context, "Failed to read shortcut file: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "读取快捷方式文件失败：" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -395,7 +395,7 @@ public class ShortcutsFragment extends Fragment {
             Toast.makeText(context, "Shortcut '" + sourceFile.getName().replace(".desktop", "") + "' imported into " + targetContainer.getName(), Toast.LENGTH_LONG).show();
             loadShortcutsList();
         } else {
-            Toast.makeText(context, "Failed to import shortcut into container.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "导入快捷方式到容器失败。", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -501,7 +501,7 @@ public class ShortcutsFragment extends Fragment {
                     tv.setText(R.string.no_items_to_display);
                     tv.setVisibility(View.VISIBLE);
                 } else if (data.isEmpty()) {
-                    tv.setText("No matching shortcuts found");
+                    tv.setText("未找到匹配的快捷方式");
                     tv.setVisibility(View.VISIBLE);
                 } else {
                     tv.setVisibility(View.GONE);
@@ -645,19 +645,19 @@ public class ShortcutsFragment extends Fragment {
                             if (lnkFile.exists()) lnkFile.delete();
                             disableShortcutOnScreen(requireContext(), shortcut);
                             loadShortcutsList();
-                            Toast.makeText(context, "Shortcut removed successfully.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "快捷方式已移除。", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Failed to remove the shortcut.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "移除快捷方式失败。", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
                 else if (itemId == R.id.shortcut_clone_to_container) {
                     showContainerSelectionDialog(new ArrayList<>(manager.getContainers()), (selectedContainer) -> {
                         if (shortcut.cloneToContainer(selectedContainer)) {
-                            Toast.makeText(context, "Shortcut cloned successfully.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "快捷方式克隆成功。", Toast.LENGTH_SHORT).show();
                             loadShortcutsList();
                         } else {
-                            Toast.makeText(context, "Failed to clone shortcut.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "克隆快捷方式失败。", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -699,7 +699,7 @@ public class ShortcutsFragment extends Fragment {
                         else if (index == 2) {
                             shortcut.removeCustomCoverArt();
                             loadShortcutsList();
-                            Toast.makeText(context, "Cover art reset.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "封面已重置。", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -717,7 +717,7 @@ public class ShortcutsFragment extends Fragment {
                         else if (index == 2) {
                             shortcut.removeCustomHeroArt();
                             loadShortcutsList();
-                            Toast.makeText(context, "Loading screen art reset.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "加载画面已重置。", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -748,9 +748,9 @@ public class ShortcutsFragment extends Fragment {
             if (!exportDir.exists()) exportDir.mkdirs();
             File exportFile = new File(exportDir, shortcut.file.getName());
             if (FileUtils.copy(shortcut.file, exportFile)) {
-                Toast.makeText(getContext(), "Shortcut exported to " + exportFile.getPath(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "快捷方式已导出到 " + exportFile.getPath(), Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(getContext(), "Failed to export shortcut.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "导出快捷方式失败。", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -771,10 +771,10 @@ public class ShortcutsFragment extends Fragment {
             // Step 1: If it's already tagged with a Steam ID, ask to confirm
             if (!steamId.isEmpty()) {
                 ContentDialog dialog = new ContentDialog(context);
-                dialog.setTitle("Confirm Game Info");
+                dialog.setTitle("确认游戏信息");
                 dialog.setMessage("This configuration is tagged as:\n\n<b>" + currentName + "</b>\n\nIs this correct for the community?");
-                ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("YES");
-                ((TextView)dialog.findViewById(R.id.BTCancel)).setText("NO, SEARCH");
+                ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("是");
+                ((TextView)dialog.findViewById(R.id.BTCancel)).setText("否，搜索");
                 dialog.setOnConfirmCallback(() -> performCommunityUpload(shortcut, currentName, steamId, communityImage));
                 dialog.setOnCancelCallback(() -> {
                     showCommunitySearchPrompt(shortcut, currentName);
@@ -814,10 +814,10 @@ public class ShortcutsFragment extends Fragment {
                             final String finalSuggestedName = cleanGameName(currentName, pcgwName);
                             
                             ContentDialog dialog = new ContentDialog(context);
-                            dialog.setTitle("Confirm Game Info");
+                            dialog.setTitle("确认游戏信息");
                             dialog.setMessage("Identified via EXE:\n\n<b>" + finalSuggestedName + "</b>\n\nIs this correct?");
-                            ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("YES");
-                            ((TextView)dialog.findViewById(R.id.BTCancel)).setText("NO, SEARCH");
+                            ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("是");
+                            ((TextView)dialog.findViewById(R.id.BTCancel)).setText("否，搜索");
                             dialog.setOnConfirmCallback(() -> searchGameForSharing(shortcut, finalSuggestedName, true));
                             dialog.setOnCancelCallback(() -> {
                                 showCommunitySearchPrompt(shortcut, currentName);
@@ -866,10 +866,10 @@ public class ShortcutsFragment extends Fragment {
                         final String finalSuggestedName = suggestedName;
 
                         ContentDialog dialog = new ContentDialog(context);
-                        dialog.setTitle("Confirm Game Info");
+                        dialog.setTitle("确认游戏信息");
                         dialog.setMessage("Is this configuration for:\n\n<b>" + finalSuggestedName + "</b>?");
-                        ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("YES");
-                        ((TextView)dialog.findViewById(R.id.BTCancel)).setText("NO, SEARCH");
+                        ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("是");
+                        ((TextView)dialog.findViewById(R.id.BTCancel)).setText("否，搜索");
                         dialog.setOnConfirmCallback(() -> searchGameForSharing(shortcut, finalSuggestedName, true));
                         dialog.setOnCancelCallback(() -> {
                             showCommunitySearchPrompt(shortcut, currentName);
@@ -919,7 +919,7 @@ public class ShortcutsFragment extends Fragment {
                 if (!query.isEmpty()) {
                     searchGameForSharing(shortcut, query, false);
                 } else {
-                    Toast.makeText(context, "Please enter a game name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "请输入游戏名称", Toast.LENGTH_SHORT).show();
                 }
             });
             dialog.show();
@@ -961,7 +961,7 @@ public class ShortcutsFragment extends Fragment {
                     } else {
                         Activity activity = getActivity();
                         if (activity != null) activity.runOnUiThread(() -> {
-                            Toast.makeText(context, "No games found on SteamGridDB. Uploading with current info.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "未在 SteamGridDB 找到游戏，将使用当前信息上传。", Toast.LENGTH_SHORT).show();
                             performCommunityUpload(shortcut, shortcut.name, "", "");
                         });
                     }
@@ -1023,7 +1023,7 @@ public class ShortcutsFragment extends Fragment {
             if (context == null) return;
 
             ContentDialog uploadDialog = new ContentDialog(context, R.layout.community_upload_dialog);
-            uploadDialog.setTitle("Community Upload");
+            uploadDialog.setTitle("社区上传");
             
             final android.widget.EditText etTitle = uploadDialog.findViewById(R.id.ETConfigTitle);
             final android.widget.EditText etNotes = uploadDialog.findViewById(R.id.ETConfigNotes);
@@ -1040,7 +1040,7 @@ public class ShortcutsFragment extends Fragment {
                 String title = etTitle.getText().toString().trim();
                 String notes = etNotes.getText().toString().trim();
                 if (title.isEmpty()) {
-                    Toast.makeText(context, "Config title is required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "配置标题为必填项", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 confirmAndUpload(shortcut, gameName, steamId, communityImage, notes, title);
@@ -1060,7 +1060,7 @@ public class ShortcutsFragment extends Fragment {
                         activity.runOnUiThread(() -> {
                             activity.preloaderDialog.close();
                             if (error == null) {
-                                Toast.makeText(context, "Uploaded successfully!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, "上传成功！", Toast.LENGTH_LONG).show();
                             } else {
                                 ContentDialog.alert(context, "Upload failed:\n\n" + error, null);
                             }
@@ -1077,7 +1077,7 @@ public class ShortcutsFragment extends Fragment {
             if (context == null) return;
 
             ContentDialog dialog = new ContentDialog(context, R.layout.shortcut_properties_dialog);
-            dialog.setTitle("Properties");
+            dialog.setTitle("属性");
             dialog.setIcon(R.drawable.ic_nav_info);
 
             View cancelBtn = dialog.findViewById(R.id.BTCancel);
@@ -1101,8 +1101,8 @@ public class ShortcutsFragment extends Fragment {
             long days = (totalMs / (1000 * 60 * 60 * 24));
             String formattedTime = String.format("%dd %02dh %02dm %02ds", days, hours, minutes, seconds);
 
-            if (tvPlayCount != null) tvPlayCount.setText("Number of times played: " + playCount);
-            if (tvPlaytime != null) tvPlaytime.setText("Playtime: " + formattedTime);
+            if (tvPlayCount != null) tvPlayCount.setText("游玩次数：" + playCount);
+            if (tvPlaytime != null) tvPlaytime.setText("游玩时长：" + formattedTime);
 
             StringBuilder sb = new StringBuilder();
             sb.append("<b>Name:</b> ").append(shortcut.name).append("<br/>");
@@ -1144,9 +1144,9 @@ public class ShortcutsFragment extends Fragment {
             if (btnReset != null) {
                 btnReset.setOnClickListener(v -> {
                     playtimePrefs.edit().remove(playtimeKey).remove(playCountKey).apply();
-                    if (tvPlayCount != null) tvPlayCount.setText("Number of times played: 0");
-                    if (tvPlaytime != null) tvPlaytime.setText("Playtime: 0d 00h 00m 00s");
-                    Toast.makeText(context, "Properties reset", Toast.LENGTH_SHORT).show();
+                    if (tvPlayCount != null) tvPlayCount.setText("游玩次数：0");
+                    if (tvPlaytime != null) tvPlaytime.setText("游玩时长：0天 00时 00分 00秒");
+                    Toast.makeText(context, "属性已重置", Toast.LENGTH_SHORT).show();
                 });
             }
 
@@ -1321,7 +1321,7 @@ public class ShortcutsFragment extends Fragment {
                         }
 
                         String suggestedName = cleanGameName(defaultName, bestName);
-                        Toast.makeText(context, "Matched via PCGamingWiki: " + suggestedName, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "通过 PCGamingWiki 匹配：" + suggestedName, Toast.LENGTH_SHORT).show();
                         showSearchPrompt(shortcut, suggestedName, forHero);
                     } else {
                         trySteamSearch(shortcut, defaultName, folderName, loadingDialog, forHero);
@@ -1367,7 +1367,7 @@ public class ShortcutsFragment extends Fragment {
                 String suggestedName = defaultName;
                 if (response.isSuccessful() && response.body() != null && response.body().items != null && !response.body().items.isEmpty()) {
                     suggestedName = findBestSteamMatch(finalSearchTerm, response.body().items);
-                    Toast.makeText(context, "Matched via Steam: " + suggestedName, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "通过 Steam 匹配：" + suggestedName, Toast.LENGTH_SHORT).show();
                 } else if (!folderName.isEmpty() && folderName.length() > 2) {
                     suggestedName = folderName;
                 } else if (cleanedExe.length() > 3) {
@@ -1546,21 +1546,21 @@ public class ShortcutsFragment extends Fragment {
 
                     holder.itemView.setOnClickListener(v -> {
                         dialog.dismiss();
-                        Toast.makeText(context, forHero ? "Applying loading screen art..." : "Applying cover art...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, forHero ? "正在应用加载画面…" : "正在应用封面…", Toast.LENGTH_SHORT).show();
                         com.winlator.cmod.core.CoverArtManager.DownloadCallback cb = new com.winlator.cmod.core.CoverArtManager.DownloadCallback() {
                             @Override
                             public void onCompleted(android.graphics.Bitmap bitmap) {
                                 Activity a = getActivity();
                                 if (a != null && !a.isFinishing() && isAdded()) a.runOnUiThread(() -> {
                                     loadShortcutsList();
-                                    Toast.makeText(context, forHero ? "Loading screen art updated." : "Cover art updated.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, forHero ? "加载画面已更新。" : "封面已更新。", Toast.LENGTH_SHORT).show();
                                 });
                             }
 
                             @Override
                             public void onFailed(com.winlator.cmod.core.CoverArtManager.ErrorReason reason) {
                                 Activity a = getActivity();
-                                if (a != null && !a.isFinishing() && isAdded()) a.runOnUiThread(() -> Toast.makeText(context, forHero ? "Failed to download loading screen art." : "Failed to download cover art.", Toast.LENGTH_SHORT).show());
+                                if (a != null && !a.isFinishing() && isAdded()) a.runOnUiThread(() -> Toast.makeText(context, forHero ? "下载加载画面失败。" : "下载封面失败。", Toast.LENGTH_SHORT).show());
                             }
                         };
                         if (forHero) com.winlator.cmod.core.CoverArtManager.downloadSelectedHeroArt(data.url(), shortcut, cb);
@@ -1606,7 +1606,7 @@ public class ShortcutsFragment extends Fragment {
             errorDialog.setMessage(message);
             if (reason == com.winlator.cmod.core.CoverArtManager.ErrorReason.NOT_FOUND || reason == com.winlator.cmod.core.CoverArtManager.ErrorReason.NETWORK_UNAVAILABLE) {
                 errorDialog.setOnConfirmCallback(() -> showArtSelectionDialog(shortcut, forHero));
-                ((TextView)errorDialog.findViewById(R.id.BTConfirm)).setText("RETRY");
+                ((TextView)errorDialog.findViewById(R.id.BTConfirm)).setText("重试");
             } else {
                 errorDialog.findViewById(R.id.BTCancel).setVisibility(View.GONE);
             }

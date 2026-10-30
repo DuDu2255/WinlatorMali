@@ -20,7 +20,7 @@ public class ShortcutBroadcastReceiver extends BroadcastReceiver {
             boolean success = intent.getBooleanExtra("shortcut_added", false);
             if (success) {
                 Log.d(LOG_TAG, "Shortcut added successfully!");
-                Toast.makeText(context, "Shortcut added successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "快捷方式添加成功！", Toast.LENGTH_SHORT).show();
             } else {
                 Log.d(LOG_TAG, "Shortcut addition failed or needing manual intervention.");
                 addShortcutToHomeScreen(context, intent);
@@ -47,7 +47,7 @@ public class ShortcutBroadcastReceiver extends BroadcastReceiver {
                 Log.d(LOG_TAG, "Pin shortcut requested with result: " + result);
 
                 if (result) {
-                    Toast.makeText(context, "Shortcut added successfully from BroadcastReceiver!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "快捷方式已通过 BroadcastReceiver 添加成功！", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.e(LOG_TAG, "Failed to add shortcut from BroadcastReceiver.");
                 }

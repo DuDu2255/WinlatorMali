@@ -215,7 +215,7 @@ public class ContainerDetailFragment extends Fragment {
                         openDirectoryCallback.call(path);
                     }
                 } else {
-                    Toast.makeText(getContext(), "Invalid directory selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "所选目录无效", Toast.LENGTH_SHORT).show();
                 }
             }
             openDirectoryCallback = null;
@@ -253,7 +253,7 @@ public class ContainerDetailFragment extends Fragment {
 
         view.findViewById(R.id.BTHelpRamBooster).setOnClickListener(v -> {
             ContentDialog dialog = new ContentDialog(getContext(), R.layout.bcn_info_dialog);
-            dialog.setTitle("RAM Booster (LMK Trigger)");
+            dialog.setTitle("内存加速器（LMK 触发）");
             dialog.setIcon(R.drawable.ic_driver_info);
 
             TextView tvMessage = dialog.findViewById(R.id.TVInfoMessage);
@@ -1116,9 +1116,9 @@ public class ContainerDetailFragment extends Fragment {
         TextView header = root.findViewById(R.id.TVBox64);
         TextView version = root.findViewById(R.id.TVBox64VersionLabel);
         TextView preset = root.findViewById(R.id.TVBox64PresetLabel);
-        if (header != null) header.setText(isArm64EC ? "WOWBox64 (32-bit programs, optional; FEXCore can do this too)" : "Box64");
-        if (version != null) version.setText(isArm64EC ? "WOWBox64 Version" : "Box64 Version");
-        if (preset != null) preset.setText(isArm64EC ? "WOWBox64 Preset" : "Box64 Preset");
+        if (header != null) header.setText(isArm64EC ? "WOWBox64（32 位程序，可选；FEXCore 也可处理）" : "Box64");
+        if (version != null) version.setText(isArm64EC ? "WOWBox64 版本" : "Box64 版本");
+        if (preset != null) preset.setText(isArm64EC ? "WOWBox64 预设" : "Box64 预设");
     }
 
     public static void loadBox64VersionSpinner(Context context, Container container, ContentsManager manager, Spinner spinner, boolean isArm64EC) {

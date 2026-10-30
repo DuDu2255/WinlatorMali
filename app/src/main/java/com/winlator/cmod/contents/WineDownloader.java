@@ -138,7 +138,7 @@ public class WineDownloader {
         String defaultTitle = "Proton 10.0-4 arm64ec (" + (isModern ? "SDK 35" : "SDK 28") + ")";
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity)
-            .setTitle("Welcome to Winlator Mali")
+            .setTitle("欢迎使用 Winlator Mali")
             .setMessage("No Wine or Proton runtimes are installed yet.\n\nTo run Windows games with highest performance, download the official Proton 10 runtime:")
             .setPositiveButton("Download " + defaultTitle, (dialog, which) -> {
                 sActiveWelcomeDialog = null;
@@ -166,7 +166,7 @@ public class WineDownloader {
         boolean isDarkMode = ThemeManager.isDarkMode(activity);
 
         ContentDialog dialog = new ContentDialog(activity, R.layout.wine_downloader_dialog);
-        dialog.setTitle("Wine & Proton Downloader");
+        dialog.setTitle("Wine 与 Proton 下载器");
         dialog.setIcon(R.drawable.icon_wine);
 
         View contentView = dialog.getContentView();
@@ -217,7 +217,7 @@ public class WineDownloader {
                 pbLoading.setVisibility(View.GONE);
                 List<String> installed = getInstalledWineVersions(activity);
                 if (installed.isEmpty()) {
-                    tvEmptyList.setText("No Wine or Proton runtimes installed.");
+                    tvEmptyList.setText("未安装 Wine 或 Proton 运行环境。");
                     tvEmptyList.setVisibility(View.VISIBLE);
                     lvWineList.setVisibility(View.GONE);
                 } else {
@@ -225,8 +225,8 @@ public class WineDownloader {
                     lvWineList.setVisibility(View.VISIBLE);
                     InstalledWineAdapter installedAdapter = new InstalledWineAdapter(activity, installed, (verName) -> {
                         new AlertDialog.Builder(activity)
-                            .setTitle("Delete " + verName + "?")
-                            .setMessage("Are you sure you want to remove this runtime from Winlator Mali?")
+                            .setTitle("删除 " + verName + "?")
+                            .setMessage("确定要从 Winlator Mali 移除该运行环境吗？")
                             .setPositiveButton("Delete", (d, w) -> {
                                 deleteWineVersion(activity, verName);
                                 AppUtils.showToast(activity, verName + " removed.");
@@ -250,7 +250,7 @@ public class WineDownloader {
                     activity.runOnUiThread(() -> {
                         pbLoading.setVisibility(View.GONE);
                         if (wineItems.isEmpty()) {
-                            tvEmptyList.setText("No Wine or Proton packages found in this source.");
+                            tvEmptyList.setText("此来源未找到 Wine 或 Proton 包。");
                             tvEmptyList.setVisibility(View.VISIBLE);
                             lvWineList.setVisibility(View.GONE);
                         } else {
@@ -286,8 +286,8 @@ public class WineDownloader {
                     input.setHint("https://example.com/contents.json");
                     input.setText(saved);
                     new AlertDialog.Builder(activity)
-                        .setTitle("Custom Catalog URL")
-                        .setMessage("Enter the URL to a contents.json repository:")
+                        .setTitle("自定义目录地址")
+                        .setMessage("输入 contents.json 仓库的地址：")
                         .setView(input)
                         .setPositiveButton("Load", (d, w) -> {
                             String custom = input.getText().toString().trim();
@@ -325,10 +325,10 @@ public class WineDownloader {
         String patternUrl = option.patternUrl;
 
         llProgress.setVisibility(View.VISIBLE);
-        tvProgressTitle.setText("Downloading " + title);
+        tvProgressTitle.setText("正在下载 " + title);
         pbDownload.setIndeterminate(false);
         pbDownload.setProgress(0);
-        tvProgressStatus.setText("Connecting to repository...");
+        tvProgressStatus.setText("正在连接仓库…");
         tvProgressPercent.setText("0%");
 
         Executors.newSingleThreadExecutor().execute(() -> {
@@ -345,15 +345,15 @@ public class WineDownloader {
                         pbDownload.setProgress(progress);
                         tvProgressPercent.setText(progress + "%");
                         String statusStr = String.format(Locale.US, "%.1f MB / %.1f MB", (readBytes / (1024.0 * 1024.0)), (totalBytes / (1024.0 * 1024.0)));
-                        tvProgressStatus.setText("Downloading runtime: " + statusStr);
+                        tvProgressStatus.setText("正在下载运行环境：" + statusStr);
                     });
                 });
 
                 // Download container pattern if URL provided
                 if (patternUrl != null && !patternUrl.isEmpty()) {
                     activity.runOnUiThread(() -> {
-                        tvProgressTitle.setText("Downloading container pattern for " + title);
-                        tvProgressStatus.setText("Connecting to pattern archive...");
+                        tvProgressTitle.setText("正在下载容器模板：" + title);
+                        tvProgressStatus.setText("正在连接模板归档…");
                         pbDownload.setProgress(0);
                         tvProgressPercent.setText("0%");
                     });
@@ -365,7 +365,7 @@ public class WineDownloader {
                             pbDownload.setProgress(progress);
                             tvProgressPercent.setText(progress + "%");
                             String statusStr = String.format(Locale.US, "%.1f MB / %.1f MB", (readBytes / (1024.0 * 1024.0)), (totalBytes / (1024.0 * 1024.0)));
-                            tvProgressStatus.setText("Downloading pattern: " + statusStr);
+                            tvProgressStatus.setText("正在下载模板：" + statusStr);
                         });
                     });
                 }
@@ -374,8 +374,8 @@ public class WineDownloader {
 
                 activity.runOnUiThread(() -> {
                     pbDownload.setIndeterminate(true);
-                    tvProgressTitle.setText("Installing " + title);
-                    tvProgressStatus.setText("Extracting & registering runtime packages...");
+                    tvProgressTitle.setText("正在安装 " + title);
+                    tvProgressStatus.setText("正在解压并注册运行环境包…");
                 });
 
                 ContentsManager contentsManager = new ContentsManager(activity);
@@ -605,11 +605,11 @@ public class WineDownloader {
             }
 
             if (isInstalled) {
-                btAction.setText("Installed");
+                btAction.setText("已安装");
                 btAction.setEnabled(false);
                 btAction.setAlpha(0.5f);
             } else {
-                btAction.setText("Get");
+                btAction.setText("获取");
                 btAction.setEnabled(true);
                 btAction.setAlpha(1.0f);
                 btAction.setOnClickListener(v -> {
@@ -650,7 +650,7 @@ public class WineDownloader {
             ImageButton btDelete = convertView.findViewById(R.id.BTWineItemDelete);
 
             tvTitle.setText(verName);
-            tvSub.setText("Active runtime in imagefs/opt or contents folder");
+            tvSub.setText("活动运行环境位于 imagefs/opt 或 contents 文件夹");
 
             btAction.setVisibility(View.GONE);
             btDelete.setVisibility(View.VISIBLE);

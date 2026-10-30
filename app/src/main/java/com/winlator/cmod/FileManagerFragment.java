@@ -124,7 +124,7 @@ public class FileManagerFragment extends Fragment {
         
         if (getActivity() instanceof AppCompatActivity activity) {
             if (activity.getSupportActionBar() != null) {
-                if (pickFolderMode) activity.getSupportActionBar().setTitle("Select save folder");
+                if (pickFolderMode) activity.getSupportActionBar().setTitle("选择存档文件夹");
                 else activity.getSupportActionBar().setTitle(R.string.file_manager);
             }
         }
@@ -198,7 +198,7 @@ public class FileManagerFragment extends Fragment {
         fabPaste.setOnLongClickListener(v -> {
             clipboardFiles.clear();
             fabPaste.setVisibility(View.GONE);
-            Toast.makeText(getContext(), "Clipboard cleared", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "剪贴板已清空", Toast.LENGTH_SHORT).show();
             return true;
         });
         fabPaste.setVisibility(!clipboardFiles.isEmpty() && !pickFolderMode ? View.VISIBLE : View.GONE);
@@ -470,13 +470,13 @@ public class FileManagerFragment extends Fragment {
             tvDriveName.setText("Drive D:");
             ivDriveIcon.setImageResource(R.drawable.ic_drive_storage);
         } else if (Objects.equals(path, Environment.getExternalStorageDirectory().getAbsolutePath())) {
-            tvDriveName.setText("Internal Storage");
+            tvDriveName.setText("内部存储");
             ivDriveIcon.setImageResource(R.drawable.ic_drive_storage);
         } else if (path.startsWith(com.winlator.cmod.xenvironment.ImageFs.find(requireContext()).getRootDir().getAbsolutePath())) {
             tvDriveName.setText("Drive Z:");
             ivDriveIcon.setImageResource(R.drawable.ic_x11_icon);
         } else {
-            tvDriveName.setText("Storage");
+            tvDriveName.setText("存储");
             ivDriveIcon.setImageResource(R.drawable.ic_drive_storage);
         }
     }
@@ -585,7 +585,7 @@ public class FileManagerFragment extends Fragment {
             
             File desktopDir = container.getDesktopDir();
             if (!desktopDir.exists() && !desktopDir.mkdirs()) {
-                Toast.makeText(getContext(), "Could not create desktop directory", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "无法创建桌面目录", Toast.LENGTH_SHORT).show();
                 return;
             }
             
@@ -601,7 +601,7 @@ public class FileManagerFragment extends Fragment {
                 writer.println("Icon=" + displayName);
                 writer.println("container_id:" + container.id);
             }
-            Toast.makeText(getContext(), "Shortcut created on container desktop!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "已在容器桌面创建快捷方式！", Toast.LENGTH_SHORT).show();
 
             if (file.getName().toLowerCase().endsWith(".exe")) {
                 File iconDir64 = container.getIconsDir(64);
@@ -610,7 +610,7 @@ public class FileManagerFragment extends Fragment {
                 ExeIconExtractor.extractAsync(file, iconDest, false, null);
             }
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Failed to create shortcut", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "创建快捷方式失败", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -692,7 +692,7 @@ public class FileManagerFragment extends Fragment {
                     if (file.renameTo(newFile)) {
                         loadFiles();
                     } else {
-                        Toast.makeText(getContext(), "Rename failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "重命名失败", Toast.LENGTH_SHORT).show();
                     }
                 });
                 return;
@@ -700,7 +700,7 @@ public class FileManagerFragment extends Fragment {
             if (file.renameTo(newFile)) {
                 loadFiles();
             } else {
-                Toast.makeText(getContext(), "Rename failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "重命名失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -723,7 +723,7 @@ public class FileManagerFragment extends Fragment {
             long count = deletedCount.incrementAndGet();
             long currentTime = System.currentTimeMillis();
             if (currentTime - lastUIUpdateTime > 100) {
-                fileProgressDialog.update(fileName, count, totalItems, count + " / " + totalItems + " items");
+                fileProgressDialog.update(fileName, count, totalItems, count + " / " + totalItems + " 项");
                 lastUIUpdateTime = currentTime;
             }
         }
@@ -735,7 +735,7 @@ public class FileManagerFragment extends Fragment {
         clipboardFiles.addAll(files);
         isCutOperation = false;
         fabPaste.setVisibility(View.VISIBLE);
-        Toast.makeText(getContext(), "Copied " + files.size() + " items", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "已复制 " + files.size() + " 项", Toast.LENGTH_SHORT).show();
         clearSelection();
     }
 
@@ -744,7 +744,7 @@ public class FileManagerFragment extends Fragment {
         clipboardFiles.addAll(files);
         isCutOperation = true;
         fabPaste.setVisibility(View.VISIBLE);
-        Toast.makeText(getContext(), "Cut " + files.size() + " items", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "已剪切 " + files.size() + " 项", Toast.LENGTH_SHORT).show();
         clearSelection();
     }
 
@@ -761,7 +761,7 @@ public class FileManagerFragment extends Fragment {
             if (selectedFiles.isEmpty()) {
                 activity.getSupportActionBar().setTitle(R.string.file_manager);
             } else {
-                activity.getSupportActionBar().setTitle(selectedFiles.size() + " selected");
+                activity.getSupportActionBar().setTitle(selectedFiles.size() + " 已选择");
             }
         }
     }
@@ -801,7 +801,7 @@ public class FileManagerFragment extends Fragment {
         };
 
         ContentDialog dialog = new ContentDialog(requireContext());
-        dialog.setTitle("File Conflict");
+        dialog.setTitle("文件冲突");
         dialog.setMessage(message);
 
         android.widget.ListView listView = dialog.findViewById(R.id.ListView);
@@ -893,7 +893,7 @@ public class FileManagerFragment extends Fragment {
                     if (getActivity() != null) getActivity().getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                     fileProgressDialog.dismiss();
                     if (finalCancelled) {
-                        Toast.makeText(getContext(), "Operation cancelled", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "操作已取消", Toast.LENGTH_SHORT).show();
                     } else if (finalSuccess) {
                         if (isCutOperation) {
                             clipboardFiles.clear();
@@ -901,7 +901,7 @@ public class FileManagerFragment extends Fragment {
                         }
                         loadFiles();
                     } else {
-                        Toast.makeText(getContext(), "Paste completed with some errors", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "粘贴完成，但存在部分错误", Toast.LENGTH_SHORT).show();
                         loadFiles();
                     }
                 });
@@ -946,11 +946,11 @@ public class FileManagerFragment extends Fragment {
                         fileProgressDialog.dismiss();
                         clearSelection();
                         if (isCancelled.get()) {
-                            Toast.makeText(getContext(), "Operation cancelled", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "操作已取消", Toast.LENGTH_SHORT).show();
                         } else if (finalSuccess) {
                             loadFiles();
                         } else {
-                            Toast.makeText(getContext(), "Remove failed for some items", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "部分项目删除失败", Toast.LENGTH_SHORT).show();
                             loadFiles();
                         }
                     });
@@ -1037,13 +1037,13 @@ public class FileManagerFragment extends Fragment {
         ContentDialog.prompt(getContext(), R.string.new_folder, "", folderName -> {
             File newDir = new File(parentDir, folderName);
             if (newDir.exists()) {
-                Toast.makeText(getContext(), "A folder with this name already exists", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "已存在同名文件夹", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (newDir.mkdirs()) {
                 loadFiles();
             } else {
-                Toast.makeText(getContext(), "Failed to create folder", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "创建文件夹失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -1056,7 +1056,7 @@ public class FileManagerFragment extends Fragment {
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(Intent.createChooser(intent, getString(R.string.share)));
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Failed to share file", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "分享文件失败", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -1064,7 +1064,7 @@ public class FileManagerFragment extends Fragment {
         if (file.isFile()) {
             displayProperties(file, file.length(), 0, 0);
         } else {
-            Toast.makeText(getContext(), "Calculating folder size...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "正在计算文件夹大小…", Toast.LENGTH_SHORT).show();
             new Thread(() -> {
                 long[] info = getDirectoryInfo(file, new java.util.HashSet<>());
                 if (getActivity() != null) {
@@ -1090,7 +1090,7 @@ public class FileManagerFragment extends Fragment {
                 "• <b>Search:</b> Deep search files in the current folder.";
 
         ContentDialog dialog = new ContentDialog(requireContext());
-        dialog.setTitle("Usage Instructions");
+        dialog.setTitle("使用说明");
         dialog.setMessage(html);
         dialog.findViewById(R.id.BTCancel).setVisibility(View.GONE);
         dialog.show();
@@ -1108,7 +1108,7 @@ public class FileManagerFragment extends Fragment {
         File outputDir = new File(currentDir, folderName);
         if (!outputDir.exists()) outputDir.mkdirs();
 
-        Toast.makeText(getContext(), "Extracting to " + folderName + "...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "正在解压到 " + folderName + "...", Toast.LENGTH_SHORT).show();
         
         TarCompressorUtils.Type finalType = type;
         new Thread(() -> {
@@ -1124,10 +1124,10 @@ public class FileManagerFragment extends Fragment {
             if (getActivity() != null) {
                 getActivity().runOnUiThread(() -> {
                     if (success) {
-                        Toast.makeText(getContext(), "Extraction complete", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "解压完成", Toast.LENGTH_SHORT).show();
                         loadFiles();
                     } else {
-                        Toast.makeText(getContext(), "Extraction failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "解压失败", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

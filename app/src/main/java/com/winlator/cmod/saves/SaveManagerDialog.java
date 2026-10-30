@@ -71,7 +71,7 @@ public class SaveManagerDialog extends ContentDialog {
 
         Button btnConfirm = findViewById(R.id.BTConfirm);
         Button btnCancel = findViewById(R.id.BTCancel);
-        if (btnConfirm != null) btnConfirm.setText("Export Backup");
+        if (btnConfirm != null) btnConfirm.setText("导出备份");
         if (btnCancel != null) btnCancel.setText("Close");
         // The three icons have different intrinsic sizes, which made one pill taller than the others.
         sizeStartIcon(btnRestore, 18);
@@ -79,7 +79,7 @@ public class SaveManagerDialog extends ContentDialog {
         limitListHeight();
 
         if (shortcut != null) {
-            tvSubtitle.setText("Save folders");
+            tvSubtitle.setText("存档文件夹");
             btnAddFolder.setOnClickListener(v -> openFolderPicker());
             populateGameList(llSaveLocations, btnToggleAll);
 
@@ -93,7 +93,7 @@ public class SaveManagerDialog extends ContentDialog {
                         }
                     }
                     for (CheckBox cb : checkBoxes) cb.setChecked(!allChecked);
-                    btnToggleAll.setText(!allChecked ? "Deselect all" : "Select all");
+                    btnToggleAll.setText(!allChecked ? "取消全选" : "全选");
                 });
             }
 
@@ -103,7 +103,7 @@ public class SaveManagerDialog extends ContentDialog {
                     if (cb.isChecked()) selected.add((File) cb.getTag());
                 }
                 if (selected.isEmpty()) {
-                    Toast.makeText(activity, "Please select at least one save location to export", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "请至少选择一个要导出的存档位置", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -118,7 +118,7 @@ public class SaveManagerDialog extends ContentDialog {
             });
 
         } else if (container != null) {
-            tvSubtitle.setText("Container profile saves");
+            tvSubtitle.setText("容器配置存档");
             if (btnToggleAll != null) btnToggleAll.setVisibility(View.GONE);
             btnAddFolder.setVisibility(View.GONE);
             ((LinearLayout.LayoutParams) btnRestore.getLayoutParams()).setMarginEnd(0);
@@ -174,7 +174,7 @@ public class SaveManagerDialog extends ContentDialog {
 
             if (info.missing) {
                 showTag(tvTag, "Not found", 0xFFE5534B);
-                tvMeta.setText("Folder no longer exists");
+                tvMeta.setText("文件夹已不存在");
             } else {
                 if (info.custom) showTag(tvTag, "Added by you", 0xFF3D82FF);
                 else if (!info.suggested) showTag(tvTag, "Possible match", 0xFFD29922);
@@ -192,7 +192,7 @@ public class SaveManagerDialog extends ContentDialog {
             });
             if (info.custom) {
                 Runnable confirmRemove = () -> new AlertDialog.Builder(activity)
-                    .setTitle("Remove folder?")
+                    .setTitle("移除文件夹？")
                     .setMessage("Stop including this folder in this game's save backups?\n\n" + info.friendlyPath + "\n\nNothing is deleted from storage.")
                     .setPositiveButton("Remove", (d, w) -> {
                         GameSaveBackup.removeCustomSaveDir(shortcut, info.directory);
@@ -294,7 +294,7 @@ public class SaveManagerDialog extends ContentDialog {
         }
 
         new AlertDialog.Builder(activity)
-            .setTitle("Select Save Archive to Restore")
+            .setTitle("选择要恢复的存档归档")
             .setItems(displayItems.toArray(new String[0]), (dialog, which) -> {
                 if (which == 0) {
                     Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
@@ -344,7 +344,7 @@ public class SaveManagerDialog extends ContentDialog {
                             msg.append("\nRestore these saves into container '").append(container.getName()).append("'?");
 
                             new AlertDialog.Builder(activity)
-                                .setTitle("Verified Save Backup")
+                                .setTitle("已验证的存档备份")
                                 .setMessage(msg.toString())
                                 .setPositiveButton("Continue", (d, w) -> planAndRestore(opener))
                                 .setNegativeButton("Cancel", null)
@@ -360,7 +360,7 @@ public class SaveManagerDialog extends ContentDialog {
                             msg.append("\nDo you want to continue?");
 
                             new AlertDialog.Builder(activity)
-                                .setTitle("Third-Party Save Archive")
+                                .setTitle("第三方存档归档")
                                 .setMessage(msg.toString())
                                 .setPositiveButton("Continue", (d, w) -> planAndRestore(opener))
                                 .setNegativeButton("Cancel", null)
@@ -390,7 +390,7 @@ public class SaveManagerDialog extends ContentDialog {
                 activity.runOnUiThread(() -> {
                     if (plan.fileCount() == 0) {
                         new AlertDialog.Builder(activity)
-                            .setTitle("Nothing to restore")
+                            .setTitle("没有可恢复的内容")
                             .setMessage(plan.rejected > 0
                                 ? plan.rejected + " file(s) in this backup belong outside this container (or to a game folder that couldn't be found), so they were not restored.\n\nIf they belong to a game installed outside drive C:, restore from that game's own Save Manager instead."
                                 : "This backup has no files to restore.")
@@ -417,7 +417,7 @@ public class SaveManagerDialog extends ContentDialog {
                         GameSaveBackup.ConflictMode.SKIP_EXISTING
                     };
                     new AlertDialog.Builder(activity)
-                        .setTitle(plan.conflicts + " of " + plan.fileCount() + " files already exist")
+                        .setTitle(plan.conflicts + " of " + plan.fileCount() + " 个文件已存在")
                         .setItems(options, (d, which) -> runRestore(plan, modes[which], opener))
                         .setNegativeButton("Cancel", null)
                         .show();
@@ -448,7 +448,7 @@ public class SaveManagerDialog extends ContentDialog {
                     }
                     dismiss();
                     new AlertDialog.Builder(activity)
-                        .setTitle("Restore complete")
+                        .setTitle("恢复完成")
                         .setMessage(msg.toString())
                         .setPositiveButton("OK", null)
                         .show();

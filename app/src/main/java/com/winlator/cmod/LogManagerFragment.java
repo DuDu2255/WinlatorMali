@@ -98,7 +98,7 @@ public class LogManagerFragment extends Fragment {
         surface = ThemeManager.getSurfaceColor(context);
         content = view.findViewById(R.id.LLLogContent);
         if (getActivity() instanceof AppCompatActivity && ((AppCompatActivity) getActivity()).getSupportActionBar() != null)
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Log Manager");
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("日志管理器");
         build();
 
         String game = getArguments() != null ? getArguments().getString(ARG_GAME) : null;
@@ -364,7 +364,7 @@ public class LogManagerFragment extends Fragment {
         bar.setOrientation(LinearLayout.HORIZONTAL);
         bar.setGravity(Gravity.CENTER_VERTICAL);
         EditText find = new EditText(context);
-        find.setHint("Find");
+        find.setHint("查找");
         find.setSingleLine(true);
         find.setTextSize(13);
         find.setTextColor(onSurface);
@@ -400,7 +400,7 @@ public class LogManagerFragment extends Fragment {
             sv.removeAllViews();
             if (wrapped[0]) sv.addView(tv);
             else { hs.addView(tv); sv.addView(hs); }
-            wrap.setText(wrapped[0] ? "No wrap" : "Wrap");
+            wrap.setText(wrapped[0] ? "不换行" : "换行");
         });
         bar.addView(wrap);
         TextView copy = chip("Copy", false);
@@ -425,7 +425,7 @@ public class LogManagerFragment extends Fragment {
         dialog.show();
         TextView confirm = dialog.findViewById(R.id.BTConfirm);
         if (confirm != null) {
-            if (file != null) confirm.setText("Share");
+            if (file != null) confirm.setText("分享");
             else confirm.setVisibility(View.GONE);
         }
     }

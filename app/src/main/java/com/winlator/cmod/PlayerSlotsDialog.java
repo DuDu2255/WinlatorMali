@@ -27,7 +27,7 @@ public class PlayerSlotsDialog {
         if (winHandler == null) return;
 
         ContentDialog dialog = new ContentDialog(context, R.layout.player_slots_dialog);
-        dialog.setTitle("Player Slots (XInput 1–4)");
+        dialog.setTitle("玩家槽位（XInput 1–4）");
         dialog.setIcon(R.drawable.icon_controller);
 
         // --- Section 1: Connected Controllers ---
@@ -60,7 +60,7 @@ public class PlayerSlotsDialog {
                 // Controller name
                 TextView tvName = row.findViewById(R.id.TVControllerName);
                 String name = controller.getName();
-                tvName.setText((name != null && !name.isEmpty()) ? name : "Gamepad");
+                tvName.setText((name != null && !name.isEmpty()) ? name : "手柄");
 
                 // Slot spinner
                 Spinner spinner = row.findViewById(R.id.SlotSpinner);

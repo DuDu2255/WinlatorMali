@@ -1157,7 +1157,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         frameRating.enableByUser();
 
         final ContentDialog dialog = new ContentDialog(this, R.layout.hud_config_dialog);
-        dialog.setTitle("HUD Settings");
+        dialog.setTitle("HUD 设置");
         dialog.setIcon(R.drawable.ic_hud);
 
         CheckBox cbEnable = dialog.findViewById(R.id.CBHudEnable);

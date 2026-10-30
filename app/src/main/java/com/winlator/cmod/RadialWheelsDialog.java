@@ -53,7 +53,7 @@ public class RadialWheelsDialog {
         }
 
         ContentDialog dialog = new ContentDialog(context, R.layout.radial_wheels_dialog);
-        dialog.setTitle(profile != null ? "Radial Wheels (" + profile.getName() + ")" : "Radial Wheels (Controller)");
+        dialog.setTitle(profile != null ? "径向轮（" + profile.getName() + ")" : "径向轮（控制器）");
         dialog.setIcon(R.drawable.icon_radial_wheel);
 
         ThemeManager.applyThemeToView(dialog.getContentView(), context);

@@ -129,7 +129,7 @@ public class DXVKConfigDialog extends ContentDialog {
 
         findViewById(R.id.BTHelpDxvkConfig).setOnClickListener(v -> {
             ContentDialog dialog = new ContentDialog(getContext(), R.layout.bcn_info_dialog);
-            dialog.setTitle("Pre-Configured DXVK Config");
+            dialog.setTitle("预配置 DXVK 配置");
             dialog.setIcon(R.drawable.ic_driver_info);
 
             TextView tvMessage = dialog.findViewById(R.id.TVInfoMessage);

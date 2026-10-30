@@ -103,6 +103,6 @@ public class FrameRating extends FrameLayout implements Runnable {
     public void run() {
         if (getVisibility() == GONE) setVisibility(View.VISIBLE);
         tvFPS.setText(String.format(Locale.ENGLISH, "%.1f", lastFPS));
-        tvRAM.setText(getAvailableRAM() + " GB Used / " + totalRAM + " Total");
+        tvRAM.setText(getAvailableRAM() + " GB 已用 / " + totalRAM + " 总计");
     }
 }

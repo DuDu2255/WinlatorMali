@@ -60,7 +60,7 @@ public class CommunityConfigsFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         
         if (getActivity() != null) {
-            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Community Configs");
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("社区配置");
         }
         
         ThemeManager.applyThemeToView(view, getContext());
@@ -121,7 +121,7 @@ public class CommunityConfigsFragment extends Fragment {
             return;
         }
 
-        tvEmptyText.setText("Loading games...");
+        tvEmptyText.setText("正在加载游戏…");
         llEmptyState.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.VISIBLE);
         CommunityConfigManager.fetchGameList((games, maintenance) -> {
@@ -229,7 +229,7 @@ public class CommunityConfigsFragment extends Fragment {
                 activity.runOnUiThread(() -> {
                     activity.preloaderDialog.close();
                     if (all.length() > 0) showConfigSelectionDialog(ids.get(0), all);
-                    else Toast.makeText(getContext(), "No configurations found for this game.", Toast.LENGTH_SHORT).show();
+                    else Toast.makeText(getContext(), "未找到该游戏的配置。", Toast.LENGTH_SHORT).show();
                 });
             });
         }
@@ -248,7 +248,7 @@ public class CommunityConfigsFragment extends Fragment {
                     if (configs.length() > 0) {
                         showConfigSelectionDialog(gameName, configs);
                     } else {
-                        Toast.makeText(getContext(), "No configurations found for this game.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "未找到该游戏的配置。", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     ContentDialog.alert(getContext(), "Failed to fetch configurations. Please check your network connection.", null);
@@ -260,7 +260,7 @@ public class CommunityConfigsFragment extends Fragment {
     private void showConfigSelectionDialog(String gameName, JSONArray configs) {
         ContentDialog dialog = new ContentDialog(getContext());
         dialog.getContentView().findViewById(R.id.BTConfirm).setVisibility(View.GONE);
-        dialog.setTitle("Select Config");
+        dialog.setTitle("选择配置");
 
         ListView listView = dialog.findViewById(R.id.ListView);
         listView.getLayoutParams().width = com.winlator.cmod.core.AppUtils.getPreferredDialogWidth(getContext());
@@ -291,7 +291,7 @@ public class CommunityConfigsFragment extends Fragment {
 
     private void showConfigDetailsDialog(String gameName, JSONObject configRef) {
         ContentDialog dialog = new ContentDialog(getContext(), R.layout.community_config_details_dialog);
-        dialog.setTitle("Configuration Details");
+        dialog.setTitle("配置详情");
         
         try {
             String title = configRef.optString("config_title", "");
@@ -346,19 +346,19 @@ public class CommunityConfigsFragment extends Fragment {
 
             Runnable updateVoteUi = () -> {
                 if (userVote[0] == 1) {
-                    btLike.setText("👍 Helpful (" + counts[0] + ") ✓");
+                    btLike.setText("👍 有用（" + counts[0] + ") ✓");
                     btLike.setTextColor(colorLike);
-                    btDislike.setText("👎 Didn't Work (" + counts[1] + ")");
+                    btDislike.setText("👎 没用（" + counts[1] + ")");
                     btDislike.setTextColor(defaultTextColor);
                 } else if (userVote[0] == -1) {
-                    btLike.setText("👍 Helpful (" + counts[0] + ")");
+                    btLike.setText("👍 有用（" + counts[0] + ")");
                     btLike.setTextColor(defaultTextColor);
-                    btDislike.setText("👎 Didn't Work (" + counts[1] + ") ✓");
+                    btDislike.setText("👎 没用（" + counts[1] + ") ✓");
                     btDislike.setTextColor(colorDislike);
                 } else {
-                    btLike.setText("👍 Helpful (" + counts[0] + ")");
+                    btLike.setText("👍 有用（" + counts[0] + ")");
                     btLike.setTextColor(defaultTextColor);
-                    btDislike.setText("👎 Didn't Work (" + counts[1] + ")");
+                    btDislike.setText("👎 没用（" + counts[1] + ")");
                     btDislike.setTextColor(defaultTextColor);
                 }
             };
@@ -436,7 +436,7 @@ public class CommunityConfigsFragment extends Fragment {
                 } catch (JSONException e) {}
             });
             
-            ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("IMPORT");
+            ((TextView)dialog.findViewById(R.id.BTConfirm)).setText("导入");
             dialog.show();
             
         } catch (Exception e) {}
@@ -572,7 +572,7 @@ public class CommunityConfigsFragment extends Fragment {
             if (!isInstalled) {
                 // The recommended runtime is not installed!
                 ContentDialog dialog = new ContentDialog(activity);
-                dialog.setTitle("Wine Runtime Notice");
+                dialog.setTitle("Wine 运行环境提示");
 
                 dialog.getContentView().setMinimumWidth((int) com.winlator.cmod.core.UnitUtils.dpToPx(330));
                 dialog.setCanceledOnTouchOutside(true);
@@ -584,7 +584,7 @@ public class CommunityConfigsFragment extends Fragment {
                             "Please download <b>" + requiredWine + "</b> from Contents to use this setup.";
                     dialog.setMessage(msg);
                     TextView btConfirm = dialog.findViewById(R.id.BTConfirm);
-                    btConfirm.setText("DOWNLOAD");
+                    btConfirm.setText("下载");
                     dialog.setOnConfirmCallback(() -> {
                         WineDownloader.showDownloadDialog(activity, () -> {
                             checkWineAndConfirmImport(activity, root, notes);
@@ -613,11 +613,11 @@ public class CommunityConfigsFragment extends Fragment {
 
                     int padH = (int) com.winlator.cmod.core.UnitUtils.dpToPx(12);
                     TextView btConfirm = dialog.findViewById(R.id.BTConfirm);
-                    btConfirm.setText("DOWNLOAD");
+                    btConfirm.setText("下载");
                     btConfirm.setPadding(padH, 0, padH, 0);
 
                     TextView btCancel = dialog.findViewById(R.id.BTCancel);
-                    btCancel.setText("USE INSTALLED");
+                    btCancel.setText("使用已安装");
                     btCancel.setPadding(padH, 0, padH, 0);
 
                     dialog.setOnConfirmCallback(() -> {
@@ -654,7 +654,7 @@ public class CommunityConfigsFragment extends Fragment {
                 }
 
                 ContentDialog dialog = new ContentDialog(activity);
-                dialog.setTitle("Import Configuration");
+                dialog.setTitle("导入配置");
                 dialog.setMessage(confirmMsg);
                 dialog.setOnConfirmCallback(() -> executeImport(activity, root));
                 dialog.show();
@@ -688,10 +688,10 @@ public class CommunityConfigsFragment extends Fragment {
                                 "3. Find your game EXE in Drive D: and play!";
                         ContentDialog.alert(getContext(), message, null);
                     } catch (Exception e) {
-                        Toast.makeText(getContext(), "Imported with minor errors.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "导入完成，但有轻微错误。", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Import failed.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "导入失败。", Toast.LENGTH_LONG).show();
                 }
             });
         });
@@ -775,7 +775,7 @@ public class CommunityConfigsFragment extends Fragment {
                         .centerCrop()
                         .into(holder.ivCoverArt);
                 } else if (!steamId.isEmpty()) {
-                    holder.tvSteamId.setText("Steam ID: " + steamId);
+                    holder.tvSteamId.setText("Steam ID：" + steamId);
                     holder.tvSteamId.setVisibility(View.VISIBLE);
                     
                     String imageUrl = "https://cdn.akamai.steamstatic.com/steam/apps/" + steamId + "/header.jpg";
@@ -794,7 +794,7 @@ public class CommunityConfigsFragment extends Fragment {
                 if (idArray != null) for (int i = 0; i < idArray.length(); i++) ids.add(idArray.optString(i));
                 if (ids.isEmpty()) ids.add(gameId);
                 holder.itemView.setOnClickListener(v -> showConfigsForGames(displayName, ids));
-            } catch (JSONException e) { holder.tvGameName.setText("Error"); }
+            } catch (JSONException e) { holder.tvGameName.setText("错误"); }
         }
 
         @Override public int getItemCount() { return games.length(); }

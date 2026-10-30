@@ -33,7 +33,7 @@ public class IconPickerDialog {
 
     public static void show(Context context, int currentIconId, OnIconSelectedCallback callback) {
         ContentDialog dialog = new ContentDialog(context);
-        dialog.setTitle("Select Icon");
+        dialog.setTitle("选择图标");
         dialog.setIcon(R.drawable.icon_radial_wheel);
 
         FrameLayout frameLayout = dialog.findViewById(R.id.FrameLayout);
@@ -58,7 +58,7 @@ public class IconPickerDialog {
         boolean isDarkMode = preferences.getBoolean("dark_mode", true);
 
         Button btNoIcon = new Button(context);
-        btNoIcon.setText("None (Text Only)");
+        btNoIcon.setText("无（仅文本）");
         btNoIcon.setTextSize(11);
         btNoIcon.setTextColor(isDarkMode ? android.graphics.Color.WHITE : android.graphics.Color.BLACK);
         LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
@@ -89,7 +89,7 @@ public class IconPickerDialog {
             List<Integer> customIds = iconManager.getCustomIconIds();
             if (!customIds.isEmpty()) {
                 TextView tvCustomHeader = new TextView(context);
-                tvCustomHeader.setText("Custom Imported Icons (" + customIds.size() + ")");
+                tvCustomHeader.setText("自定义导入图标（" + customIds.size() + ")");
                 tvCustomHeader.setTextSize(13);
                 tvCustomHeader.setPadding(4, 8, 4, 4);
                 tvCustomHeader.setTextColor(context.getResources().getColor(R.color.colorAccent));
@@ -140,7 +140,7 @@ public class IconPickerDialog {
 
             // ── Section 2: Built-in Icons ──
             TextView tvBuiltinHeader = new TextView(context);
-            tvBuiltinHeader.setText("Built-in Icons");
+            tvBuiltinHeader.setText("内置图标");
             tvBuiltinHeader.setTextSize(13);
             tvBuiltinHeader.setPadding(4, 12, 4, 4);
             tvBuiltinHeader.setTextColor(context.getResources().getColor(R.color.colorAccent));
