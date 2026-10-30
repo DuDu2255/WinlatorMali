@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_game_info">搜索游戏信息</string>
+    <string name="no_internet_connection">无网络连接。请检查你的网络设置。</string>
+    <string name="community_search_instruction">输入游戏的 <b>官方全名</b> 以获得准确的社区索引。</string>
+</resources>
